@@ -2,4 +2,17 @@
 plugins {
     id("com.android.application") version "8.1.0" apply false
     id("org.jetbrains.kotlin.android") version "1.8.0" apply false
+    id("com.google.dagger.hilt.android") version "2.44" apply false
+}
+
+buildscript {
+   val  kotlinVersion = "1.8.21" // Use the latest stable version
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
+    }
 }
