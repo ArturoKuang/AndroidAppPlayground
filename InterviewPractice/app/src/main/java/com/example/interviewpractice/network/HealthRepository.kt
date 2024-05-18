@@ -1,10 +1,13 @@
 package com.example.interviewpractice.network
 
+import kotlinx.coroutines.delay
+
 
 data class HealthData(
-    private val age: Int,
-    private val name: String,
-    private val weight: Int
+    val age: Int,
+    val name: String,
+    val weight: Int,
+    val image: String
 )
 
 interface HealthRepository {
@@ -21,5 +24,5 @@ class HealthRepositoryImpl(
 
 
 fun HealthResponseItem.toHealthData(): HealthData {
-    return HealthData(age, name, weight)
+    return HealthData(age, name, weight, image)
 }

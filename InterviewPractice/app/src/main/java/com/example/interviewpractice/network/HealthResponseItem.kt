@@ -15,5 +15,7 @@ data class HealthResponseItem(
     @SerializedName("name")
     val name: String, // John Doe
     @SerializedName("weight")
-    val weight: Int // 70
+    val weight: Int, // 70
+    @SerializedName("image")
+    val image: String,
 )

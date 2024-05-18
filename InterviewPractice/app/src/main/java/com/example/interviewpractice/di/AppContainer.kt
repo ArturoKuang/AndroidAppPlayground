@@ -28,7 +28,7 @@ class AppContainer {
     private val retrofit = Retrofit.Builder()
         .client(client)
         .baseUrl(LOCAL_HOST)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 
