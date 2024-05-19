@@ -1,10 +1,10 @@
-package com.example.interviewpractice.di
+package com.example.interviewpractice.manual_di.di
 
-import com.example.interviewpractice.network.HealthDataRemoteSource
-import com.example.interviewpractice.network.HealthDataRemoteSourceImpl
-import com.example.interviewpractice.network.HealthDataService
-import com.example.interviewpractice.network.HealthRepository
-import com.example.interviewpractice.network.HealthRepositoryImpl
+import com.example.interviewpractice.manual_di.network.HealthDataRemoteSource
+import com.example.interviewpractice.manual_di.network.HealthDataRemoteSourceImpl
+import com.example.interviewpractice.manual_di.network.HealthDataService
+import com.example.interviewpractice.manual_di.network.HealthRepository
+import com.example.interviewpractice.manual_di.network.HealthRepositoryImpl
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient

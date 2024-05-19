@@ -9,7 +9,8 @@ health_data = [
         "age": 30,
         "weight": 70,
         "height": 175,
-        "conditions": ["hypertension", "diabetes"]
+        "conditions": ["hypertension", "diabetes"],
+        "image": "https://picsum.photos/id/0/5000/3333"
     },
     {
         "id": 2,
@@ -17,7 +18,8 @@ health_data = [
         "age": 25,
         "weight": 60,
         "height": 165,
-        "conditions": ["asthma"]
+        "conditions": ["asthma"],
+        "image": "https://picsum.photos/id/1/5000/3333"
     },
     {
         "id": 3,
@@ -25,7 +27,8 @@ health_data = [
         "age": 35,
         "weight": 80,
         "height": 160,
-        "conditions": ["obesity", "hypothyroidism"]
+        "conditions": ["obesity", "hypothyroidism"],
+        "image": "https://picsum.photos/id/2/5000/3333"
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@ health_data = [
         "age": 40,
         "weight": 90,
         "height": 180,
-        "conditions": ["high cholesterol"]
+        "conditions": ["high cholesterol"],
+        "image": "https://picsum.photos/id/3/5000/3333"
     },
     {
         "id": 5,
@@ -41,9 +45,11 @@ health_data = [
         "age": 29,
         "weight": 55,
         "height": 170,
-        "conditions": ["anemia"]
+        "conditions": ["anemia"],
+        "image": "https://picsum.photos/id/4/5000/3333"
     }
 ]
+
 
 @app.get("/list")
 async def read_list():
@@ -62,3 +68,4 @@ async def read_root():
         </body>
     </html>
     """
+    

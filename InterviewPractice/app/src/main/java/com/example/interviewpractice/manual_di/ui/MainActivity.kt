@@ -1,4 +1,4 @@
-package com.example.interviewpractice.ui
+package com.example.interviewpractice.manual_di.ui
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -23,7 +23,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
-import com.example.interviewpractice.ui.theme.MyTheme
+import com.example.interviewpractice.manual_di.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     private val healthViewModel: HealthViewModel by viewModels { HealthViewModel.Factory }
