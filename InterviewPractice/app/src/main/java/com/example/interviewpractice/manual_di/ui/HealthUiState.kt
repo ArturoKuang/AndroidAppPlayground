@@ -1,6 +1,6 @@
-package com.example.interviewpractice.ui
+package com.example.interviewpractice.manual_di.ui
 
-import com.example.interviewpractice.network.HealthData
+import com.example.interviewpractice.manual_di.network.HealthData
 
 sealed class HealthUiState {
     object Loading: HealthUiState()

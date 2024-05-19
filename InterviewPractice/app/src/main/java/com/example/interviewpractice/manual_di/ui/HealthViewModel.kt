@@ -1,4 +1,4 @@
-package com.example.interviewpractice.ui
+package com.example.interviewpractice.manual_di.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.interviewpractice.MainApplication
-import com.example.interviewpractice.network.HealthRepository
+import com.example.interviewpractice.manual_di.network.HealthRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

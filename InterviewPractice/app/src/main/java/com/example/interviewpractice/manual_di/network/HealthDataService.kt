@@ -1,4 +1,4 @@
-package com.example.interviewpractice.network
+package com.example.interviewpractice.manual_di.network
 
 import retrofit2.http.GET
 
