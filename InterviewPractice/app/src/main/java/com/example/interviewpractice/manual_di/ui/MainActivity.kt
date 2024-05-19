@@ -1,5 +1,6 @@
 package com.example.interviewpractice.manual_di.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -23,6 +24,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
+import com.example.interviewpractice.hilt.ui.HealthActivity
 import com.example.interviewpractice.manual_di.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -34,14 +36,18 @@ class MainActivity : AppCompatActivity() {
         setContent {
             MyTheme {
                 val healthUiState = healthViewModel.uiState.collectAsState()
-                MainPage(healthUiState = healthUiState.value)
+                MainPage(healthUiState = healthUiState.value, this::goToHealthActivity)
             }
         }
+    }
+
+    private fun goToHealthActivity() {
+        startActivity(Intent(this, HealthActivity::class.java))
     }
 }
 
 @Composable
-fun MainPage(healthUiState: HealthUiState) {
+fun MainPage(healthUiState: HealthUiState, goToActivity: () -> Unit) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "LoginPage") {
         composable("HealthPage", enterTransition = { slideInHorizontally() }) {
@@ -53,9 +59,10 @@ fun MainPage(healthUiState: HealthUiState) {
             "LoginPage",
             exitTransition = { fadeOut() }) {
             LoginPage(onNavigateToHealthPage = {
-                navController.navigate(
-                    "HealthPage"
-                )
+//                navController.navigate(
+//                    "HealthPage"
+//                )
+                goToActivity()
             })
         }
         dialog("Settings") { Settings() }

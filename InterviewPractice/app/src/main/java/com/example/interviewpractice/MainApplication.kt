@@ -6,7 +6,7 @@ import com.example.interviewpractice.manual_di.di.AppContainer
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.runBlocking
 import timber.log.Timber
-import timber.log.Timber.*
+import timber.log.Timber.DebugTree
 import timber.log.Timber.Forest.plant
 import javax.inject.Inject
 
@@ -16,7 +16,8 @@ class MainApplication : Application() {
 
     val appContainer = AppContainer()
 
-    @Inject private lateinit var healthDataRepository: HealthDataRepository
+    @Inject
+    lateinit var healthDataRepository: HealthDataRepository
 
     override fun onCreate() {
         super.onCreate()
@@ -24,7 +25,7 @@ class MainApplication : Application() {
             plant(DebugTree())
         }
         runBlocking {
-            Timber.d(healthDataRepository.getUserHealthData())
+            Timber.d(healthDataRepository.getUserHealthData().toString())
         }
     }
 }

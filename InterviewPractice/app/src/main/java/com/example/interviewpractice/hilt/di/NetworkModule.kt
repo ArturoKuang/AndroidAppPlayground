@@ -41,6 +41,7 @@ class NetworkModule {
     @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
+            .client(okHttpClient)
             .baseUrl(LOCAL_HOST)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
