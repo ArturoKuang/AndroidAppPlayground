@@ -2,6 +2,8 @@ package com.example.interviewpractice.hilt.data
 
 import com.example.interviewpractice.hilt.network.HealthDataService
 import com.example.interviewpractice.manual_di.network.HealthResponse
+import com.example.interviewpractice.manual_di.network.ItemBody
+import com.example.interviewpractice.manual_di.network.ItemResponse
 import javax.inject.Inject
 
 
@@ -18,12 +20,25 @@ data class UserHealthData(
 
 interface HealthDataRepository {
     suspend fun getUserHealthData(): List<UserHealthData>
+    suspend fun getItems(
+        queryParams: Map<String, String>,
+        itemId: String,
+        body: ItemBody
+    ): ItemResponse
 }
 
 class HealthDataRepositoryImpl @Inject constructor(private val healthDataService: HealthDataService) :
     HealthDataRepository {
     override suspend fun getUserHealthData(): List<UserHealthData> {
         return healthDataService.getHealthData().toUserHealthData()
+    }
+
+    override suspend fun getItems(
+        queryParams: Map<String, String>,
+        itemId: String,
+        body: ItemBody
+    ): ItemResponse {
+        return healthDataService.getItems(queryParams = queryParams, itemId = itemId, body = body)
     }
 }
 
