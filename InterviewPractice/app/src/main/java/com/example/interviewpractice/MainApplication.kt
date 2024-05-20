@@ -24,8 +24,5 @@ class MainApplication : Application() {
         if (BuildConfig.DEBUG) {
             plant(DebugTree())
         }
-        runBlocking {
-            Timber.d(healthDataRepository.getUserHealthData().toString())
-        }
     }
 }
